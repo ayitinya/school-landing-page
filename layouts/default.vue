@@ -4,31 +4,31 @@ import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/
 const links = [
     {
         name: 'Home',
-        href: '#',
+        href: '/',
     },
     {
         name: 'About',
-        href: '#',
+        href: '/about',
     },
     {
         name: 'Academics',
-        href: '#',
+        href: '/academics',
     },
     {
         name: 'Admissions',
-        href: '#',
+        href: '/admissions',
     },
     {
         name: 'Gallery',
-        href: '#',
+        href: '/gallery',
     },
     {
         name: 'Staff',
-        href: '#',
+        href: '/staff',
     },
     {
         name: 'Contact',
-        href: '#',
+        href: '/contact',
     },
 ]
 
@@ -71,7 +71,7 @@ onMounted(() => {
                         </div>
                         <PopoverGroup as="nav" class="hidden space-x-10 lg:flex">
                             <NuxtLink v-for="link in links" :key="link.name" :to="link.href"
-                                class="text-base font-medium  "
+                                class="text-base font-medium"
                                 :class="[navTransparent ? 'text-white hover:text-gray-400' : 'text-gray-500 hover:text-gray-900']">
                                 {{ link.name }}
                             </NuxtLink>
@@ -167,7 +167,7 @@ onMounted(() => {
                     </div>
                     <div>
                         <h3 class="text-xl my-3 font-semibold">Quick Links</h3>
-                        <ul>
+                        <ul class="columns-1 sm:columns-2">
                             <li v-for="link of links">
                                 <NuxtLink :to="link.href">{{ link.name }}</NuxtLink>
                             </li>
@@ -189,5 +189,9 @@ onMounted(() => {
     background-repeat: no-repeat;
     background-blend-mode: overlay;
     background-position: center;
+}
+
+.router-link-active {
+    @apply text-indigo-500 underline underline-offset-8;
 }
 </style>
