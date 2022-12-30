@@ -123,25 +123,28 @@ onMounted(() => {
                     </PopoverPanel>
                 </transition>
             </Popover>
-            <div ref="hero" id="hero" class="h-[720px] max-h-screen">
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 h-full">
-                    <div class="flex flex-col justify-end h-full py-16 lg:py-32 max-w-[50ch] md:max-w-[66ch]">
-                        <h1 class="text-3xl tracking-tight font-extrabold text-white sm:text-4xl md:text-5xl">
-                            <span class="block">A World Class </span>
-                            <span class="block text-indigo-400 xl:inline">Educational Opportunity</span>
-                        </h1>
-                        <p class="mt-5 text-white text-lg sm:text-xl md:text-2xl">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quos.
-                        </p>
-                        <div>
-                            <NuxtLink to="/about"
-                                class="mt-8 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                                Contact Us
-                            </NuxtLink>
+            <slot name="hero">
+                <div ref="hero" id="hero"
+                    class="h-[720px] max-h-screen bg-cover bg-no-repeat bg-blend-overlay bg-center">
+                    <div class="mx-auto max-w-7xl px-4 sm:px-6 h-full">
+                        <div class="flex flex-col justify-end h-full py-16 lg:py-32 max-w-[50ch] md:max-w-[66ch]">
+                            <h1 class="text-3xl tracking-tight font-extrabold text-white sm:text-4xl md:text-5xl">
+                                <span class="block">A World Class </span>
+                                <span class="block text-indigo-400 xl:inline">Educational Opportunity</span>
+                            </h1>
+                            <p class="mt-5 text-white text-lg sm:text-xl md:text-2xl">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quos.
+                            </p>
+                            <div>
+                                <NuxtLink to="/about"
+                                    class="mt-8 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                                    Contact Us
+                                </NuxtLink>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </slot>
         </header>
         <main>
             <slot></slot>
@@ -185,10 +188,6 @@ onMounted(() => {
 <style scoped>
 #hero {
     background-image: url('../assets/images/hero.jpg'), linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
-    background-position: center;
 }
 
 .router-link-active {
