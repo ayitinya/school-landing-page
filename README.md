@@ -1,6 +1,6 @@
 # Nuxt 3 Minimal Starter
 
-This is a work in progress.
+This is a work in progress
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
